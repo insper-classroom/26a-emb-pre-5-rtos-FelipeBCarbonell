@@ -20,7 +20,7 @@ void btn_callback(uint gpio, uint32_t events) {
     if (events == 0x4 && gpio == BTN_PIN_R) { // fall edge
         xSemaphoreGiveFromISR(xSemaphore_r, 0);
     }
-    elseif (events == 0x4 && gpio == BTN_PIN_G) { // fall edge
+    else if (events == 0x4 && gpio == BTN_PIN_G) { // fall edge
         xSemaphoreGiveFromISR(xSemaphore_g, 0);
     }
 }
