@@ -17,10 +17,10 @@ SemaphoreHandle_t xSemaphore_r;
 SemaphoreHandle_t xSemaphore_g;
 
 void btn_callback(uint gpio, uint32_t events) {
-    if (events == 0x4) { // fall edge
+    if (events == 0x4 && gpio == BTN_PIN_R) { // fall edge
         xSemaphoreGiveFromISR(xSemaphore_r, 0);
     }
-    elseif (events == 0x8) { // fall edge
+    elseif (events == 0x4 && gpio == BTN_PIN_G) { // fall edge
         xSemaphoreGiveFromISR(xSemaphore_g, 0);
     }
 }
