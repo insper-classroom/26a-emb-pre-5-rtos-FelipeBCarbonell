@@ -42,6 +42,7 @@ int main() {
   xTaskCreate(led_2_task, "LED_Task 2", 256, NULL, 1, NULL);
   vTaskStartScheduler();
 
+  
   while (true)
     ;
 }
